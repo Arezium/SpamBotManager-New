@@ -34,8 +34,8 @@ def changeName(username, token):
   req = requests.get(f'{define.baseURL}/users/@me', headers=headers, proxies=define.switchProxy())
   r = req.json()
   name = str(r.get("username"))
-  if name.startswith("TMH") or name.startswith("Real Vx") or name.startswith("Real Cosmo"):
-    return
+  # if name.startswith("TMH") or name.startswith("Real Vx") or name.startswith("Real Cosmo"):
+    # return
   else:
     try:
       data = {"username": username}

@@ -25,7 +25,8 @@ class Misc(commands.Cog, name="Miscellanous Commands"):
     self.arezid = define.arezium
     self.vined = define.vined
     self.allowed = define.allowed
-
+    
+  #DOESNT WORK
   @commands.command(name="status", description="Available statuses are: online, dnd (do not disturb), offline, idle")
   async def status(self, ctx, *, args):
     """Changes the bots statuses (fail)"""
