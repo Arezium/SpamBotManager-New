@@ -37,18 +37,21 @@ baseURL = "https://discord.com/api/v8"
 #env
 tok = os.getenv("TOKEN") #the manager bot token
 tokens = json.loads(os.environ["BOT_TOKENS"]) #list, main part of the bot
-tokenserver = int(os.environ.get('WHITELISTED_TOKENS_SERVER')) #not needed
-people = json.loads(os.environ["PEOPLE"]) #list
-blackListed = json.loads(os.environ["BLACKLISTED_CHANNELS"]) #list
-anti_dm = json.loads(os.environ['BLACKLISTED_PEOPLE']) #list, makes people not be able to use dm command
+tokenserver = int(os.environ.get('WHITELISTED_TOKENS_SERVER')) #not needed (the server in which you can use the tokens command)
+people = json.loads(os.environ["PEOPLE"]) #list - uses ids
+blackListed = json.loads(os.environ["BLACKLISTED_CHANNELS"]) #list - uses ids
+anti_dm = json.loads(os.environ['BLACKLISTED_PEOPLE']) #list, makes people not be able to use dm command - uses ids
 
-#this is not needed, you can delete this
-arezium = int(os.environ.get('AREZIUM'))
-vined = int(os.environ.get('VINED'))
+#for information refer to below - uses id
+owner = os.environ.get("OWNER")
+
+#list - uses ids (the people that can access the owner_cmds cog (except load, reload and unload - only the bot owner can do that))
+owners = json.loads(os.environ["OWNERS"])
+
 
 
 folder = 'cogs'
-allowed = [vined, arezium]
+allowed = owners
 
 
 def getProxies(protocol):

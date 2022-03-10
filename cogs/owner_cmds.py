@@ -30,8 +30,8 @@ class Owner(commands.Cog):
     self.socks5 = define.socks5_amount
     self.proxies = define.total_proxies
     self.tokens = define.tokens
-    self.arezid = define.arezium
-    self.vined = define.vined
+    self.owners = define.owners
+    self.owner = define.owner
     self.tserver = define.tokenserver
     self.wlist = define.people
     self.allowed = define.allowed
@@ -155,7 +155,7 @@ class Owner(commands.Cog):
 
   @commands.command()
   async def load(self, ctx, cog):
-        if ctx.message.author.id == self.vined:
+        if ctx.message.author.id == self.owner:
             if cog == "*" or cog == "all":
                 await ctx.send("Loading all cogs...")
                 for filename in os.listdir(f'{self.folder}'):
@@ -181,7 +181,7 @@ class Owner(commands.Cog):
             
   @commands.command()
   async def unload(self, ctx, cog):
-        if ctx.message.author.id == self.vined:
+        if ctx.message.author.id == self.owner:
             if cog == "*" or cog == "all":
                 await ctx.send("Unloading all cogs...")
                 for filename in os.listdir(f'{self.folder}'):
@@ -212,7 +212,7 @@ class Owner(commands.Cog):
             
   @commands.command()
   async def reload(self, ctx, cog):
-        if ctx.message.author.id == self.vined:
+        if ctx.message.author.id == self.owner:
             if cog == "*" or cog == "all":
                 await ctx.send("Reloading all cogs...")
                 for filename in os.listdir(f'{self.folder}'):
